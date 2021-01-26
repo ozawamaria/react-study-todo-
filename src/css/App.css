@@ -1,8 +1,8 @@
   
 .app {
-  background-color: rgb(20, 237, 140);
+  background-color: rgb(241, 191, 134);
   width: 100%;
-  color: white;
+  color: rgb(255, 255, 255);
   padding: 10px;
   text-align: center;
 }

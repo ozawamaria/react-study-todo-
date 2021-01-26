@@ -17,6 +17,7 @@ class App extends Component {
     }
   }
 
+  /*追加ボタンを押したときの処理*/
   handleSubmit(e) {
     e.preventDefault();
     const title = e.target.title.value;
@@ -39,6 +40,7 @@ class App extends Component {
     e.target.desc.value = '';
   }
 
+  /*完了ボタンを押したときの処理 */
   setTodoStatus(clickTodo) {
     const todos = this.state.todos.slice();
     const todo = todos[clickTodo.id - 1];
@@ -47,6 +49,8 @@ class App extends Component {
 
     this.setState({ todos });
   }
+
+  /*ファイルからデータを読み込む処理*/
   fetchData(url) {
     this.setState({ isLoading: true })
     fetch(url)
@@ -69,9 +73,12 @@ class App extends Component {
       })
       .catch(() => this.setState({ hasError: true }))
   }
+
+  /*ファイルからデータを読み込む*/
   componentDidMount() {
     this.fetchData('data.json');
   }
+
   render() {
     return (
       <div className="app">

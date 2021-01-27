@@ -79,6 +79,13 @@ class App extends Component {
     this.fetchData('data.json');
   }
 
+  /*削除ボタンを押したときの処理*/
+  deleteTodoState(clickTodo) {
+    const todos = this.state.todos.slice();
+    todos.splice(clickTodo.index, 1);
+    this.setState({ todos });
+  }
+
   render() {
     return (
       <div className="app">
@@ -88,6 +95,7 @@ class App extends Component {
           todos={this.state.todos}
           setTodoStatus={this.setTodoStatus.bind(this)}
           isLoading={this.state.isLoading}
+          deleteTodoState={this.deleteTodoState.bind(this)}
           hasError={this.state.hasError}
           />
       </div>
